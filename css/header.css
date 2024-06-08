@@ -21,7 +21,7 @@ header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 4em;
+  height: 5em;
 
   background: var(--tertiary-color);
   backdrop-filter: blur(20px);
@@ -85,7 +85,7 @@ header ul .li1 a{
 
 header ul .li2 a{
   background-color: var(--fourth-color);
-  padding: 8px 35px;
+  padding: 10px 25px;
   border-radius: 22px
 }
 
