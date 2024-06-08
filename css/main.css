@@ -1,0 +1,16 @@
+:root {
+  --primary-color: #005b9e; /* TSA BLUE */
+  --secondary-color: #F1FAFF; /* OFF WHITE */
+  --tertiary-color: #0B1623; /* DARK BLAKISH BLUE */
+  --fourth-color: #ee3124; /* TSA RED */
+
+
+  --brightness: brightness(100%);
+  --background: rgba(0, 0, 0, 0.050);
+  --transparent: transparent;
+  --dark: rgba(0, 0, 0, 0.493);
+}
+
+body{
+  background-color: var(--secondary-color);
+}
