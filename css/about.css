@@ -1,0 +1,262 @@
+
+.part1{
+  background-color: pink;
+  width: 100%;
+  height: 55vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url(../pictures/image.webp);
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.part1 h1{
+  font-family: Oswald;
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  letter-spacing: 3px;
+
+  color: var(--secondary-color);
+}
+
+/*------------------------------------ MEET THE ADVISORS ---------------------------------*/
+
+.part2{ 
+  display: flex;
+  width: 100%;
+
+  margin-top: 2%;
+  height: 55vh;
+  justify-content: center;
+}
+
+.part2-holder{
+  width: 45%;
+  padding: 2%;
+}
+
+.part2-holder h1{
+  margin-bottom: 2%;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+}
+
+.part2-holder p{
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+.img-holder{
+  width: 45%;
+  padding: 2%;
+}
+
+.img-holder img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*------------------------------------ MEET THE CHAPTER ---------------------------------*/
+
+.part3{
+  width: 100%;
+  height: 155vh;
+  margin-top: 3%;
+
+  text-align: center;
+
+  justify-content: center;
+  align-items: center;
+
+}
+
+.part3 h1{
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-family: Oswald;
+  letter-spacing: 3px;
+}
+
+.part3-holder{
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 3%;
+}
+
+.hexagon-member{
+  display: flex;
+  margin: 0 85px;
+
+  height: 600px;
+  width: 400px;
+
+  justify-content: center;
+  align-items: flex-end;
+
+  position: relative;
+}
+
+.hexagon-member:nth-child(1){
+  background-color: var(--primary-color);
+}
+
+.hexagon-member:nth-child(2){
+  background-color: var(--fourth-color);
+}
+
+.hexagon-member:nth-child(3){
+  background-color: var(--tertiary-color);
+}
+
+.hexagon-text{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  
+  align-items: flex-start;
+  padding-top: 2%;
+  padding-bottom: 5%;
+
+  background-color: var(--secondary-color);
+  height: 30%;
+
+  position: absolute;
+}
+
+.hexagon-text h2{
+  color: rgb(0, 0, 0);
+}
+
+.hexagon-text p{
+  color: rgb(0, 0, 0);
+  width: 100%;
+  align-content: flex-start;
+  text-align: left;
+  margin-top: 2%;
+}
+
+.hexagon-member img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/*------------------------------------ JOIN TSA ---------------------------------*/
+
+
+.part4{
+  height: 55vh;
+  padding-top: 3%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2%;
+
+  background-color: rgb(236, 236, 236);
+}
+
+.part4-2{
+  width: 40%;
+}
+
+.part4-2 h1{
+  margin-bottom: 3%;
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-family: Oswald;
+  letter-spacing: 2px;
+}
+
+.part4-2 p{
+  line-height: 30px;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+/*------------------------------------ BUTTON =---------------------------------*/
+
+.button-fame{
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-fame a{
+  padding: 20px 35px;
+  border-radius: 20px;
+  text-decoration: none;
+
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-family: Oswald;
+  letter-spacing: 3px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+
+  transition: all 0.2s ease-in-out;
+}
+
+.button-fame a:hover{
+  padding: 25px 45px;
+  background-color: var(--fourth-color);
+}
+
+/*------------------------------------ RESPONSIVE =---------------------------------*/
+
+@media (max-width: 768px){
+
+  .part3-holder{
+    flex-direction: column;
+  }
+
+  .hexagon-member{
+    height: 700px;
+    width: 400px;
+  }
+
+  .part3{
+    width: 100%;
+    height: 550vh;
+  }
+
+
+
+  .part2{ 
+    flex-direction: column;
+    height: 70vh;
+    margin-top: 2%;
+  }
+  
+  .part2-holder{
+    width: 100%;
+    padding: 2%;
+    height: 50%;
+  }
+
+  .img-holder{
+    width: 100%;
+    padding: 2%;
+    height: 50%;
+  }
+
+
+
+  .part4{
+    height: 150vh;
+    padding-top: 3%;
+    padding: 5%;
+    flex-direction: column;
+  }
+  
+  .part4-2{
+    width: 100%;
+  }
+  
+  .part4-2 p{
+    line-height: 30px;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+  }
+  
+}

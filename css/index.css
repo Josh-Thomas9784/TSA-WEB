@@ -638,7 +638,7 @@
   justify-content: space-between;
   width: 100%;
   margin-top: 5%;
-
+  height: 40vh;
 }
 
 .fact-container{
@@ -1015,3 +1015,62 @@
     font-size: 1.2rem;
   }
 }
+
+
+/*---------------  RESPONSIVE ----------------*/
+
+@media (max-width:768px){
+  .text-container{
+    padding: 2%;
+    width: 100%;
+    height: 80%;
+  
+    display: flex;
+    flex-direction: column;
+  }
+
+
+
+
+  .headA{
+    margin-left: 5%;
+    margin-top: 25%;
+  }
+
+
+
+
+  .part3{
+    height: 55vh;
+  }
+  
+
+
+  .part4{
+    height: 120vh;
+  }
+
+
+  .fact-holder{
+    margin-top: 60%;
+    height: 80vh;
+  }
+
+
+  .part6{
+    display: flex;
+    height: 175vh;
+    margin-top: 2%;
+  }
+  
+  .info-container2{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+    gap: 10%;
+  }
+
+  
+}
+
