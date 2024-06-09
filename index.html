@@ -21,14 +21,14 @@
       <ul class="ul1">
         <li class="li1"><a href="About-TSA.html">About TSA</a>
           <ul>
-            <li><a href="About-TSA.html">Our Chapter</a></li>
-            <li class="li1"><a href="About-TSA.html">Contacts</a></li>
+            <li><a href="About-TSA.html#chapter">Our Chapter</a></li>
+            <li class="li1"><a href="About-TSA.html#contacts">Contacts</a></li>
             <li class="li1"><a href="About-TSA.html">Hall of Fame</a></li>
           </ul>
         </li>
-        <li class="li1"><a href="Events.html">Sponsor Us</a></li>
+        <li class="li1"><a href="Sponsor.html">Sponsor Us</a></li>
         <li class="li1"><a href="store2.html">Store</a></li>
-        <li class="li2"><a href="login.html">Join</a></li>
+        <li class="li2"><a href="login.html">Database</a></li>
       </ul>
     </nav>
   </header>
@@ -53,7 +53,14 @@
         <p>Engage in STEM Based activities and competitions that address multiple intrest areas such as engineering, leadership, and technology. Join the Lamar Consolidated TSA team and 
           help us continue to make a difference in the Technical world. 
         </p>
-        <a href="https://cash.app/" target="_blank">Become a Sponsor</a>
+
+        <button class="btn" onclick="validatePassword()">Become a Sponsor</button>
+        </div>
+        <div id="warning" class="warning"></div>
+        <span class="color color--blue" data-value="1"></span>
+        <span class="color color--orange" data-value="1"></span>
+        <span class="color color--green" data-value="1"></span>
+        <span class="color color--white" data-value="1"></span>
       </div>
     </div>
 
@@ -334,6 +341,31 @@
         });
       }
     }
+
+
+
+    // LARGE BUTTON
+    const button = document.querySelector(".btn");
+        button.addEventListener("click", (e) => {
+            e.preventDefault();
+            button.classList.add("btn--clicked");
+            document.querySelectorAll("span").forEach((element) => {
+                element.classList.add("expanded");
+            });
+
+            setTimeout(() => {
+                button.classList.remove("btn--clicked");
+                
+                // Redirect to the next page after animation is complete
+                window.location.href = "sponsor.html";
+            }, 1500);
+
+            setTimeout(() => {
+                document.querySelectorAll("span").forEach((element) => {
+                    element.classList.remove("expanded");
+                });
+            }, 1700);
+        });
   </scripT>
 
 </body>

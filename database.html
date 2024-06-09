@@ -2,16 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The TSA Database</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
         header {
             background-color: #0044cc;
             color: white;
@@ -234,9 +228,27 @@
                 width: 290px;
             }
         }
+
+        .arrow{
+            position: absolute;
+            top: 20px;
+            left: 30px;
+        }
+
+        .arrow img{
+            height: 30px;
+            transition: all 0.2s ease-out;
+        }
+
+        .arrow img:hover{
+            transform: scale(1.1, 1.1);
+        }
     </style>
 </head>
 <body>
+
+    <div class="arrow"><a href="index.html"><img src="pictures/arrow-left (1).svg" alt=""></a></div>
+
     <div id="parallax-world-of-ugg">
         <div class="title">
             <h3>THE OFFICIAL LCHS TSA</h3>
@@ -248,7 +260,7 @@
     <div class="images-container">
         <a href="https://band.us/n/abaa0co3c67ak"><img src="pictures/band.png" alt="Link 1"></a>
         <a href="https://discord.com/invite/trgmU6wUfr"><img src="pictures/discord.png" alt="Link 2"></a>
-        <a href="pictures/canvas.png"><img src="pictures/canvas.png" alt="Link 3"></a>
+        <a href="https://lcisd.instructure.com/login/ldap"><img src="pictures/canvas.png" alt="Link 3"></a>
     </div>
 
     <div class="search-container">

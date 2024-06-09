@@ -5,26 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>shop</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/main.css">
+  
   <style>
     @import url(https://fonts.googleapis.com/css?family=Oswald:300,400,700);
     @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
 
-    * {
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      min-height: 100vh;
-      background: #fff;
-      font-family: "Lato", sans-serif;
-      font-weight: 400;
-      font-style: normal;
-    }
 
     #parallax-world-of-ugg h1 {
       font-family: 'Oswald', sans-serif;
@@ -58,27 +45,9 @@
       color: black;
     }
 
-    #parallax-world-of-ugg p {
-      font-family: 'Source Sans Pro', sans-serif;
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 24px;
-    }
-
-    .first-character {
-      font-weight: 400;
-      float: left;
-      font-size: 84px;
-      line-height: 64px;
-      padding-top: 4px;
-      padding-right: 8px;
-      padding-left: 3px;
-      font-family: 'Source Sans Pro', sans-serif;
-    }
-
     #parallax-world-of-ugg .title {
-      background: white;
       padding: 60px;
+      padding-top: 10em;
       margin: 0 auto;
       text-align: center;
     }
@@ -294,6 +263,36 @@
   </style>
 </head>
 <body>
+
+  <header id="header">
+    <div class="img-logo">
+      <a href="index.html" class="logo"><img src="pictures/minimal_logo_tsa.webp"></a>
+    </div>
+    <div class="menuToggle"></div>
+    <nav>
+      <ul class="ul1">
+        <li class="li1"><a href="About-TSA.html">About TSA</a>
+          <ul>
+            <li><a href="About-TSA.html#chapter">Our Chapter</a></li>
+            <li class="li1"><a href="About-TSA.html#contacts">Contacts</a></li>
+            <li class="li1"><a href="About-TSA.html">Hall of Fame</a></li>
+          </ul>
+        </li>
+        <li class="li1"><a href="Sponsor.html">Sponsor Us</a></li>
+        <li class="li1"><a href="store2.html">Store</a></li>
+        <li class="li2"><a href="login.html">Database</a></li>
+      </ul>
+    </nav>
+  </header>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script>
+    let menuToggle = document.querySelector('.menuToggle');
+    let header = document.querySelector('header');
+    menuToggle.onclick = function(){
+      header.classList.toggle('active');
+    }
+  </script>
+  
   <div id="parallax-world-of-ugg">
     <div class="title">
       <h3>THE OFFICIAL LCHS TSA</h3>
@@ -312,7 +311,7 @@
               <img src="hydropic (3).png" alt="Trust & Co.">
             </div>
             <div class="icon">
-              <a href="productpage.html" class="iconBox">
+              <a href="productpage.html" target="_blank" class="iconBox">
                 <span class="material-symbols-outlined">↗</span>
               </a>
             </div>
@@ -333,7 +332,7 @@
               <img src="hydropic (4).png" alt="Tonic">
             </div>
             <div class="icon">
-              <a href="productpage.html" class="iconBox">
+              <a href="productpage.html" target="_blank" class="iconBox">
                 <span class="material-symbols-outlined">↗</span>
               </a>
             </div>
@@ -354,7 +353,7 @@
               <img src="hydropic (5).png">
             </div>
             <div class="icon">
-              <a href="productpage.html" class="iconBox">
+              <a href="productpage.html" target="_blank" class="iconBox">
                 <span class="material-symbols-outlined">↗</span>
               </a>
             </div>
@@ -380,7 +379,7 @@
               <img src="hydropic (8).png" alt="Trust & Co.">
             </div>
             <div class="icon">
-              <a href="productpage.html" class="iconBox">
+              <a href="productpage.html"  target="_blank" class="iconBox">
                 <span class="material-symbols-outlined">↗</span>
               </a>
             </div>
@@ -401,7 +400,7 @@
               <img src="hydropic (6).png" alt="Tonic">
             </div>
             <div class="icon">
-              <a href="productpage.html" class="iconBox">
+              <a href="productpage.html" target="_blank" class="iconBox">
                 <span class="material-symbols-outlined">↗</span>
               </a>
             </div>
@@ -422,7 +421,7 @@
               <img src="hydropic (7).png">
             </div>
             <div class="icon">
-              <a href="productpage.html" class="iconBox">
+              <a href="productpage.html" target="_blank" class="iconBox">
                 <span class="material-symbols-outlined">↗</span>
               </a>
             </div>

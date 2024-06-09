@@ -134,9 +134,26 @@
             transition: opacity 2s ease-out;
             margin-top: 20px;
         }
+
+        .arrow{
+            position: absolute;
+            top: 20px;
+            left: 30px;
+        }
+
+        .arrow img{
+            height: 30px;
+            transition: all 0.2s ease-out;
+        }
+
+        .arrow img:hover{
+            transform: scale(1.1, 1.1);
+        }
     </style>
 </head>
 <body>
+
+<div class="arrow"><a href="index.html"><img src="pictures/arrow-left (1).svg" alt=""></a></div>
 
 <div class="login-container">
     <div class="login-form">
@@ -146,6 +163,8 @@
         <label>
             <input type="checkbox" id="rememberMe"> Remember this device
         </label>
+
+        
         <button class="btn" onclick="validatePassword()">ACCESS LAMAR PORTAL</button>
     </div>
     <div id="warning" class="warning"></div>
