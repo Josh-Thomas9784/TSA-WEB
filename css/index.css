@@ -1071,6 +1071,9 @@
     gap: 10%;
   }
 
-  
+  .scroll2-container{
+    margin-top: 3%;
+    height: 40vh;
+  }
 }
 
