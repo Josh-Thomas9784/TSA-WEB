@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The TSA Database</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #0044cc;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        .images-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        .images-container a {
+            margin: 10px;
+        }
+        .images-container img {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .images-container img:hover {
+            transform: scale(1.1);
+        }
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .search-bar {
+            padding: 10px;
+            width: 80%;
+            max-width: 600px;
+            font-size: 16px;
+            box-sizing: border-box;
+            border: 2px solid #0044cc;
+            border-radius: 5px;
+        }
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .card {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 10px;
+            width: calc(100% - 40px);
+            max-width: 300px;
+            box-sizing: border-box;
+            padding: 20px;
+            text-align: center;
+            transition: box-shadow 0.3s;
+        }
+        .card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        .card h3 {
+            margin: 10px 0;
+            color: #0044cc;
+        }
+        .card p {
+            text-align: center;
+        }
+        .buttons {
+            margin-top: 10px;
+        }
+        .buttons button {
+            background-color: #0044cc;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .buttons button:hover {
+            background-color: #003399;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 5px;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        @import url(https://fonts.googleapis.com/css?family=Oswald:300,400,700);
+        @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
+
+        #parallax-world-of-ugg h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 24px;
+            font-weight: 400;
+            text-transform: uppercase;
+            color: black;
+            padding: 0;
+            margin: 0;
+        }
+
+        #parallax-world-of-ugg h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 70px;
+            letter-spacing: 10px;
+            text-align: center;
+            color: white;
+            font-weight: 400;
+            text-transform: uppercase;
+            z-index: 10;
+            opacity: .9;
+        }
+
+        #parallax-world-of-ugg h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 14px;
+            line-height: 0;
+            font-weight: 400;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            color: black;
+        }
+
+        #parallax-world-of-ugg p {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 24px;
+        }
+
+        .first-character {
+            font-weight: 400;
+            float: left;
+            font-size: 84px;
+            line-height: 64px;
+            padding-top: 4px;
+            padding-right: 8px;
+            padding-left: 3px;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        #parallax-world-of-ugg .title {
+            background: white;
+            padding: 60px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        #parallax-world-of-ugg .title h1 {
+            font-size: 35px;
+            letter-spacing: 8px;
+        }
+
+        #parallax-world-of-ugg .line-break {
+            border-bottom: 1px solid black;
+            width: 150px;
+            margin: 0 auto;
+        }
+
+        @media screen and (max-width: 959px) and (min-width: 768px) {
+            #parallax-world-of-ugg .block {
+                padding: 40px;
+                width: 620px;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            #parallax-world-of-ugg .block {
+                padding: 30px;
+                width: 420px;
+            }
+
+            #parallax-world-of-ugg h2 {
+                font-size: 30px;
+            }
+
+            #parallax-world-of-ugg .block {
+                padding: 30px;
+            }
+
+            #parallax-world-of-ugg .parallax-one,
+            #parallax-world-of-ugg .parallax-two,
+            #parallax-world-of-ugg .parallax-three {
+                padding-top: 100px;
+                padding-bottom: 100px;
+            }
+        }
+
+        @media screen and (max-width: 479px) {
+            #parallax-world-of-ugg .block {
+                padding: 30px 15px;
+                width: 290px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="parallax-world-of-ugg">
+        <div class="title">
+            <h3>THE OFFICIAL LCHS TSA</h3>
+            <h1>DATABASE</h1>
+            <div class="line-break"></div>
+        </div>
+    </div>
+
+    <div class="images-container">
+        <a href="https://band.us/n/abaa0co3c67ak"><img src="pictures/band.png" alt="Link 1"></a>
+        <a href="https://discord.com/invite/trgmU6wUfr"><img src="pictures/discord.png" alt="Link 2"></a>
+        <a href="pictures/canvas.png"><img src="pictures/canvas.png" alt="Link 3"></a>
+    </div>
+
+    <div class="search-container">
+        <input type="text" id="searchInput" class="search-bar" placeholder="Search for cards..." onkeyup="filterCards()">
+    </div>
+
+    <div id="cardsContainer" class="cards-container">
+        <div class="card" data-title="Animatronics">
+            <img src="https://via.placeholder.com/150" alt="Animatronics">
+            <h3>Animatronics</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="Architectural Design">
+            <img src="https://via.placeholder.com/150" alt="Architectural Design">
+            <h3>Architectural Design</h3>
+            <p>In response to the annual design challenge, participants develop a set of architectural plans and related materials...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="Audio Podcasting">
+            <img src="https://via.placeholder.com/150" alt="Audio Podcasting">
+            <h3>Audio Podcasting</h3>
+            <p>Participants use digital audio technology to create original content for a podcast piece that addresses the annual theme...</p>
+            <div class="buttons">
+                
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="Biotechnology Design">
+            <img src="https://via.placeholder.com/150" alt="Animatronics">
+            <h3>Biotechnology Design</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="Board Game Design">
+            <img src="https://via.placeholder.com/150" alt="Animatronics">
+            <h3>Board Game Design</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="Chapter Team">
+            <img src="https://via.placeholder.com/150" alt="Animatronics">
+            <h3>Chapter Team</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="Children's Stories">
+            <img src="https://via.placeholder.com/150" alt="Animatronics">
+            <h3>Children's Stories</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="Coding">
+            <img src="https://via.placeholder.com/150" alt="Animatronics">
+            <h3>Coding</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="Computer-Aided Design (CAD), Architecture">
+            <img src="https://via.placeholder.com/150" alt="Animatronics">
+            <h3>Computer-Aided Design (CAD), Architecture</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="Computer-Aided Design (CAD), Engineering">
+            <img src="https://via.placeholder.com/150" alt="Animatronics">
+            <h3>Computer-Aided Design (CAD), Engineering</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="Data Science and Analytics">
+            <img src="https://via.placeholder.com/150" alt="Data Science and Analytics">
+            <h3>Data Science and Analytics</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="Debating Technological Issues">
+            <img src="https://via.placeholder.com/150" alt="View Past Submissions">
+            <h3>Debating Technological Issues</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="Digital Video Production">
+            <img src="https://via.placeholder.com/150" alt="Animatronics">
+            <h3>Digital Video Production</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="Dragster Design">
+            <img src="https://via.placeholder.com/150" alt="Animatronics">
+            <h3>Dragster Design</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="Drone Challenge (UAV)">
+            <img src="https://via.placeholder.com/150" alt="Animatronics">
+            <h3>Drone Challenge (UAV)</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="Engineering Design">
+            <img src="https://via.placeholder.com/150" alt="Animatronics">
+            <h3>Engineering Design</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="Essays on Technology">
+            <img src="https://via.placeholder.com/150" alt="Animatronics">
+            <h3>Essays on Technology</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="Extemporaneous Speech">
+            <img src="https://via.placeholder.com/150" alt="Animatronics">
+            <h3>Extemporaneous Speech</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="Fashion Design and Technology">
+            <img src="https://via.placeholder.com/150" alt="Animatronics">
+            <h3>Fashion Design and Technology</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="Flight Endurance">
+            <img src="https://via.placeholder.com/150" alt="Animatronics">
+            <h3>Flight Endurance</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="Forensic Science">
+            <img src="https://via.placeholder.com/150" alt="Animatronics">
+            <h3>Forensic Science</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="Future Technology Teacher">
+            <img src="https://via.placeholder.com/150" alt="Animatronics">
+            <h3>Future Technology Teacher</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="Geospatial Technology">
+            <img src="https://via.placeholder.com/150" alt="Animatronics">
+            <h3>Geospatial Technology</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="Manufacturing Prototype">
+            <img src="https://via.placeholder.com/150" alt="Animatronics">
+            <h3>Manufacturing Prototype</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="Music Production">
+            <img src="https://via.placeholder.com/150" alt="Animatronics">
+            <h3>Music Production</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="On Demand Video">
+            <img src="https://via.placeholder.com/150" alt="Animatronics">
+            <h3>On Demand Video</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="Photographic Technology">
+            <img src="https://via.placeholder.com/150" alt="Animatronics">
+            <h3>Photographic Technology</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="Prepared Presentation">
+            <img src="https://via.placeholder.com/150" alt="Animatronics">
+            <h3>Prepared Presentation</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="Promotional Design">
+            <img src="https://via.placeholder.com/150" alt="Animatronics">
+            <h3>Promotional Design</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="Senior Solar Sprint">
+            <img src="https://via.placeholder.com/150" alt="Animatronics">
+            <h3>Senior Solar Sprint</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="Software Development">
+            <img src="https://via.placeholder.com/150" alt="Animatronics">
+            <h3>Software Development</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="Structural Design and Engineering">
+            <img src="https://via.placeholder.com/150" alt="Animatronics">
+            <h3>Structural Design and Engineering</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="System Control Technology">
+            <img src="https://via.placeholder.com/150" alt="Animatronics">
+            <h3>System Control Technology</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="Technology Bowl">
+            <img src="https://via.placeholder.com/150" alt="Animatronics">
+            <h3>Technology Bowl</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="Technology Problem Solving">
+            <img src="https://via.placeholder.com/150" alt="Animatronics">
+            <h3>Technology Problem Solving</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="Transportation Modeling">
+            <img src="https://via.placeholder.com/150" alt="Animatronics">
+            <h3>Transportation Modeling</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="VEX Robotics Competition">
+            <img src="https://via.placeholder.com/150" alt="Animatronics">
+            <h3>VEX Robotics Competition</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="Video Game Design">
+            <img src="https://via.placeholder.com/150" alt="Animatronics">
+            <h3>Video Game Design</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="Virtual Reality Visualization (VR)">
+            <img src="https://via.placeholder.com/150" alt="Animatronics">
+            <h3>Virtual Reality Visualization (VR)</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-title="Webmaster">
+            <img src="https://via.placeholder.com/150" alt="Animatronics">
+            <h3>Webmaster</h3>
+            <p>To address the annual design challenge, participants exhibit and demonstrate their knowledge of mechanical and control systems...</p>
+            <div class="buttons">
+                <div class="dropdown">
+                    <button>View Past Submissions</button>
+                    <div class="dropdown-content">
+                        <a href="#">2023</a>
+                        <a href="#">2022</a>
+                        <a href="#">2021</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add more cards as needed -->
+    </div>
+
+    <script>
+        function filterCards() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let cards = document.querySelectorAll('.card');
+            let cardsArray = Array.from(cards);
+
+            cardsArray.sort((a, b) => {
+                let aTitle = a.getAttribute('data-title').toLowerCase();
+                let bTitle = b.getAttribute('data-title').toLowerCase();
+                let aIndex = aTitle.indexOf(input);
+                let bIndex = bTitle.indexOf(input);
+                
+                if (aIndex === -1) aIndex = Infinity;
+                if (bIndex === -1) bIndex = Infinity;
+
+                return aIndex - bIndex;
+            });
+
+            let container = document.getElementById('cardsContainer');
+            container.innerHTML = '';
+            cardsArray.forEach(card => container.appendChild(card));
+        }
+
+        function viewRules(title) {
+            alert("Viewing rules for " + title);
+            // Here you can add code to redirect to the rules page or display rules in a modal
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+

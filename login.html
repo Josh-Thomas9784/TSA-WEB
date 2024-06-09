@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('pictures/tsalogin.png') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+
+        .login-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .login-form h2 {
+            margin-bottom: 10px;
+        }
+
+        .login-form p {
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .login-form input[type="password"] {
+            margin-bottom: 10px;
+            padding: 15px;
+            font-size: 18px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .login-form input[type="checkbox"] {
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            font-family: sans-serif;
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2.8px;
+            background-color: #658abb;
+            padding: 15px 50px;
+            border-radius: 5rem;
+            box-shadow: 1px 2.9px 16px rgba(249, 27, 27, 0.4);
+            transition: 0.6s cubic-bezier(0.01, 1.69, 0.99, 0.94);
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            box-shadow: 3px 4.9px 16px rgba(27, 82, 249, 0.6);
+            letter-spacing: 5px;
+        }
+
+        .btn--clicked {
+            transition: 0.6s cubic-bezier(0.01, 1.69, 0.99, 0.94);
+            padding: 15px 2px;
+            width: 50px;
+            color: transparent;
+            z-index: -10;
+        }
+
+        .color {
+            display: block;
+            width: 0;
+            height: 0;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            transition: 0.8s ease;
+            border-radius: 50%;
+            background-color: transparent;
+        }
+
+        .expanded {
+            width: 200%;
+            padding-bottom: 200%;
+            height: auto;
+        }
+
+        .color--blue {
+            background-color: #658abb;
+            transition-delay: 0.05s;
+        }
+
+        .color--orange {
+            background-color: rgb(9, 70, 183);
+            transition-delay: 0.20s;
+        }
+
+        .color--green {
+            background-color: #2a4569;
+            transition-delay: 0.5s;
+        }
+
+        .color--white {
+            background-color: #96aac5;
+            transition-delay: 0.75s;
+        }
+
+        .warning {
+            color: red;
+            font-size: 14px;
+            opacity: 1;
+            transition: opacity 2s ease-out;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <div class="login-form">
+        <h2>For TSA Members Only</h2>
+        <p>Please enter your password to continue</p>
+        <input type="password" id="password" placeholder="Enter password">
+        <label>
+            <input type="checkbox" id="rememberMe"> Remember this device
+        </label>
+        <button class="btn" onclick="validatePassword()">ACCESS LAMAR PORTAL</button>
+    </div>
+    <div id="warning" class="warning"></div>
+    <span class="color color--blue" data-value="1"></span>
+    <span class="color color--orange" data-value="1"></span>
+    <span class="color color--green" data-value="1"></span>
+    <span class="color color--white" data-value="1"></span>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        if (localStorage.getItem("rememberMe") === "true") {
+            window.location.href = 'database.html';
+        }
+    });
+
+    const button = document.querySelector(".btn");
+    button.addEventListener("click", (e) => {
+        e.preventDefault();
+        validatePassword();
+    });
+
+    function validatePassword() {
+        const correctPassword = 'lamar'; // Set your year's password here
+        const enteredPassword = document.getElementById('password').value;
+        const warning = document.getElementById('warning');
+        const rememberMe = document.getElementById('rememberMe').checked;
+
+        warning.style.opacity = '1'; // Reset warning opacity
+
+        if (enteredPassword === correctPassword) {
+            if (rememberMe) {
+                localStorage.setItem("rememberMe", "true");
+            }
+            button.classList.add("btn--clicked");
+            document.querySelectorAll("span").forEach((element) => {
+                element.classList.add("expanded");
+            });
+
+            setTimeout(() => {
+                button.classList.remove("btn--clicked");
+                
+                // Redirect to the next page after animation is complete
+                window.location.href = 'database.html';
+            }, 1500);
+
+            setTimeout(() => {
+                document.querySelectorAll("span").forEach((element) => {
+                    element.classList.remove("expanded");
+                });
+            }, 1700);
+        } else {
+            warning.textContent = 'Incorrect password. Please try again.';
+            setTimeout(() => {
+                warning.style.opacity = '0';
+            }, 3000);
+        }
+    }
+</script>
+
+</body>
+</html>
+
+
