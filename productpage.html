@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        .product {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .product-images {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .product-images img {
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: transform 0.2s ease-in-out;
+            border: 2px solid transparent;
+        }
+        .product-images img:hover {
+            transform: scale(1.1);
+            border-color: #3498db;
+        }
+        .product-main-image {
+            flex: 1;
+            padding-left: 20px;
+        }
+        .product-main-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+            transition: transform 0.2s ease-in-out;
+        }
+        .product-details {
+            flex: 1;
+            padding: 20px;
+        }
+        .product-title {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .product-description {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .product-price {
+            font-size: 24px;
+            color: #e67e22;
+            margin-bottom: 20px;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .purchase-btn {
+            background-color: #3498db;
+            color: #fff;
+        }
+        .purchase-btn:hover {
+            background-color: #2980b9;
+        }
+        .donate-btn {
+            background-color: #e74c3c;
+            color: #fff;
+        }
+        .donate-btn:hover {
+            background-color: #c0392b;
+        }
+        .recommended-products {
+            margin: 40px 0;
+        }
+        .recommended-products h3 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .card-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: calc(25% - 20px);
+            box-sizing: border-box;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        .card img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .card-title {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .card-price {
+            font-size: 16px;
+            color: #e67e22;
+            margin-bottom: 10px;
+        }
+        .card .button {
+            background-color: #3498db;
+            color: #fff;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .card .button:hover {
+            background-color: #2980b9;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 100%;
+                padding: 10px;
+            }
+            .product {
+                flex-direction: column;
+            }
+            .product-main-image {
+                padding-left: 0;
+                margin-bottom: 20px;
+            }
+            .card {
+                width: calc(50% - 10px);
+            }
+        }
+        @media (max-width: 580px) {
+            .product-images {
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                gap: 7px;
+                padding-bottom: 10px;
+                padding-top: 10px;
+            }
+            .product-images img {
+                width: 50px;
+                height: 50px;
+            }
+            .product-main-image img {
+                max-width: 100%;
+                height: auto;
+            }
+            .card {
+                width: 100%;
+            }
+        }
+    </style>
+    <script>
+        function changeMainImage(event) {
+            const mainImage = document.getElementById('main-image');
+            mainImage.src = event.target.src;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="product">
+            <div class="product-images">
+                <img src="pictures/hydropic (3).png" alt="Thumbnail 1" onclick="changeMainImage(event)">
+                <img src="pictures/hydropic (4).png" alt="Thumbnail 2" onclick="changeMainImage(event)">
+                <img src="pictures/hydropic (5).png" alt="Thumbnail 3" onclick="changeMainImage(event)">
+                <img src="pictures/hydropic (6).png" alt="Thumbnail 4" onclick="changeMainImage(event)">
+                <img src="pictures/hydropic (7).png" alt="Thumbnail 5" onclick="changeMainImage(event)">
+            </div>
+            <div class="product-main-image">
+                <img id="main-image" src="pictures/hydropic (3).png" alt="Main Product Image">
+            </div>
+            <div class="product-details">
+                <h2 class="product-title">Product Name</h2>
+                <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque.</p>
+                <div class="product-price">$99.99</div>
+                <div class="buttons">
+                    <button class="button purchase-btn">Purchase</button>
+                    <button class="button donate-btn">Donate</button>
+                </div>
+            </div>
+        </div>
+        <div class="recommended-products">
+            <h3>Other items you might be interested in</h3>
+            <div class="card-container">
+                <div class="card">
+                    <img src="https://via.placeholder.com/200" alt="Product 1">
+                    <div class="card-title">Product 1</div>
+                    <div class="card-price">$49.99</div>
+                    <a href="product1.html" class="button">View Product</a>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/200" alt="Product 2">
+                    <div class="card-title">Product 2</div>
+                    <div class="card-price">$59.99</div>
+                    <a href="product2.html" class="button">View Product</a>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/200" alt="Product 3">
+                    <div class="card-title">Product 3</div>
+                    <div class="card-price">$69.99</div>
+                    <a href="product3.html" class="button">View Product</a>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/200" alt="Product 4">
+                    <div class="card-title">Product 4</div>
+                    <div class="card-price">$79.99</div>
+                    <a href="product4.html" class="button">View Product</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
