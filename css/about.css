@@ -8,9 +8,11 @@
   justify-content: center;
   align-items: center;
 
-  background-image: url(../pictures/image.webp);
+  background-image: url(../pictures/Screenshot\ 2024-06-09\ 213412.png);
   background-position: center;
   background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .part1 h1{
