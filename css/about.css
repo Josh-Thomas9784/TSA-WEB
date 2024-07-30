@@ -1,26 +1,44 @@
 
 .part1{
-  background-color: pink;
   width: 100%;
-  height: 55vh;
+  height: 50vh;
 
   display: flex;
   justify-content: center;
-  align-items: center;
+  flex-direction: column;
 
-  background-image: url("../pictures/Screenshot\ 2024-06-09\ 213412.png");
+  position: relative;
+
+  /*background-image: url("../pictures/Screenshot\ 2024-06-09\ 213412.png");
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover;*/
+
 }
 
 .part1 h1{
   font-family: Oswald;
-  font-size: clamp(2rem, 5vw, 3.8rem);
+  font-size: 5rem;
   letter-spacing: 3px;
 
-  color: var(--secondary-color);
+  margin-top: 5%;
+  margin-left: 9.5%;
+}
+
+.part1 h2{
+  font-family: Source Sans Pro;
+  font-size: 2rem;
+  letter-spacing: 3px;
+  margin-left: 9.5%;
+}
+
+
+.part1-image{
+  position: absolute;
+  height: 1000px;
+  right: 0;
+  z-index: -1;
 }
 
 /*------------------------------------ MEET THE ADVISORS ---------------------------------*/
@@ -29,34 +47,83 @@
   display: flex;
   width: 100%;
 
-  margin-top: 2%;
+  margin-top: 5%;
   height: 55vh;
   justify-content: center;
+  align-items: center;
+}
+
+.part2-container{
+  display: flex;
+  width: 80%;
+  gap: 10%;
+}
+
+.advisor1{
+  width: 50%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10%;
+
+  position: relative;
+}
+
+.advisor2{
+  width: 50%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10%;
+
+  position: relative;
+
 }
 
 .part2-holder{
-  width: 45%;
-  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background-color: var(--secondary-color);
+  border: 1px solid rgba(0, 0, 0, 0.068);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 20px;
+  padding: 5%;
+
+  position: absolute;
+  width: 90%;
+  bottom: -50px;
+  left: -50px;
 }
 
 .part2-holder h1{
-  margin-bottom: 2%;
-  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-family: Source Sans Pro;
+  font-weight:  500;
+  margin-bottom: 5px;
 }
 
 .part2-holder p{
-  font-size: clamp(1rem, 2vw, 1.2rem);
+  width: 90%;
+  word-break: break-all;
 }
 
 .img-holder{
-  width: 45%;
-  padding: 2%;
+  height: 100%;
+  width: 80%;
+  margin-left: 10%;
+
+  border-radius: 16px;
 }
 
 .img-holder img{
-  width: 100%;
   height: 100%;
-  object-fit: cover;
+  width: 100%;
+  border-radius: 16px;
 }
 
 /*------------------------------------ MEET THE CHAPTER ---------------------------------*/
@@ -64,7 +131,6 @@
 .part3{
   width: 100%;
   height: 155vh;
-  margin-top: 3%;
 
   text-align: center;
 
@@ -84,16 +150,14 @@
 
   justify-content: center;
   align-items: center;
-
-  margin-top: 3%;
 }
 
 .hexagon-member{
   display: flex;
-  margin: 0 85px;
+  margin: 10px 45px;
 
-  height: 600px;
-  width: 400px;
+  height: 700px;
+  width: 450px;
 
   justify-content: center;
   align-items: flex-end;
@@ -123,13 +187,23 @@
   padding-bottom: 5%;
 
   background-color: var(--secondary-color);
-  height: 30%;
+  height: 32%;
 
   position: absolute;
 }
 
 .hexagon-text h2{
   color: rgb(0, 0, 0);
+  font-family: Source Sans Pro;
+  font-weight: 600;
+}
+
+.hexagon-text h3{
+  color: rgb(0, 0, 0);
+  font-family: Source Sans Pro;
+  font-weight: 300;
+  margin-top: 5px;
+  margin-bottom: 4px;
 }
 
 .hexagon-text p{
@@ -138,6 +212,7 @@
   align-content: flex-start;
   text-align: left;
   margin-top: 2%;
+  font-family: Source Sans Pro
 }
 
 .hexagon-member img{
@@ -154,7 +229,7 @@
   padding-top: 3%;
   display: flex;
   justify-content: space-around;
-  margin-top: 2%;
+  margin-top: 10%;
 
   background-color: rgb(236, 236, 236);
 }
@@ -209,38 +284,94 @@
 
 @media (max-width: 768px){
 
+  .part1 h1{
+    font-family: Oswald;
+    font-size: 4rem;
+    letter-spacing: 3px;
+  
+    margin-top: 5%;
+    margin-left: 0%;
+  }
+  
+  .part1 h2{
+    font-family: Source Sans Pro;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    margin-left: 0%;
+    text-align: center;
+    width: 95%;
+    
+  }
+
+  .part1{
+    align-items: center;
+  }
+
+
+
+
+
   .part3-holder{
     flex-direction: column;
   }
 
   .hexagon-member{
-    height: 700px;
-    width: 400px;
+    height: 550px;
+    width: 350px;
+    margin-top: 20%;
   }
 
   .part3{
     width: 100%;
-    height: 550vh;
+    height: 4000px
   }
+
 
 
 
   .part2{ 
+    height: 1500px;
+    margin-top: 0%;
+  }
+
+  .part2-container{
     flex-direction: column;
-    height: 70vh;
-    margin-top: 2%;
+    width: 100%;
+    align-items: center;
+  }
+
+  .advisor1{
+    width: 100%;
+    height: 45%;
+    align-items: center;
+    margin-bottom: 25%;
   }
   
-  .part2-holder{
+  .advisor2{
     width: 100%;
-    padding: 2%;
-    height: 50%;
+    height: 45%;
+    align-items: center;
   }
 
   .img-holder{
-    width: 100%;
-    padding: 2%;
     height: 50%;
+    width: 90%;
+    margin-left: 0;
+  }
+  
+  .img-holder img{
+    height: 100%;
+    width: 100%;
+    border-radius: 16px;
+    object-fit: cover;
+  }
+
+  .part2-holder{
+    position: absolute;
+    width: 95%;
+    bottom: -50px;
+    left: 10px;
+    right: 10px;
   }
 
 

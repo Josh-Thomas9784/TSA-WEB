@@ -6,9 +6,9 @@
 /* -------------- ROOT COLORS (USED THROUGHOUT WEBSITE) ------------------*/
 :root {
   --primary-color: #005b9e; /* TSA BLUE */
-  --secondary-color: #F1FAFF; /* OFF WHITE */
+  --secondary-color: #F2F3F4; /* OFF WHITE */
   --tertiary-color: #00294c; /* DARK BLAKISH BLUE */
-  --fourth-color: #ee3124; /* TSA RED */
+  --fourth-color: #D22330; /* TSA RED */
 
 
   --brightness: brightness(100%);

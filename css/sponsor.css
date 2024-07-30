@@ -21,25 +21,30 @@
 
 .textbox-hero p{
   font-family: Source Sans Pro;
-  font-size: clamp(1.2rem, 5vw, 1.75rem);
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
   color: white;
   margin-bottom: 5%;
+  font-weight: 300;
 }
 
 .textbox-hero h1{
   font-family: Oswald;
   font-size: clamp(4rem, 6vw, 5.5rem);
   color: white;
-  letter-spacing: 10px;
+  margin-bottom: 1%;
 }
 
 .textbox-hero a{
   background-color: var(--fourth-color);
-  padding: 15px 35px;
+  padding: 15px 55px;
   border-radius: 25px;
   color: white;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
+  font-family: Source Sans Pro;
+  font-size: 1.2rem;
+
+  text-decoration: none;
 }
 
 .textbox-hero a:hover{
@@ -48,11 +53,13 @@
 
 .hero-img{
   width: 30%;
+  height: 100%;
 }
 
 .hero-img img{
-  height: 800px;
+  height: 100%;
 }
+
 
 /*--------------------------------------------------   CONFERENCE ACHIEVEMENTS ----------------------------------------*/
 
@@ -70,13 +77,17 @@
 
 .local-textbox h1{
   font-size: 3rem;
-  font-family: Roboto Slab;
+  font-family: Oswald;
+  font-weight: 500;
+  letter-spacing: 2px;
 }
 
 .local-textbox p{
-  letter-spacing: 3px;
   color:var(--fifth-color);
-  font-family: Mulish;
+
+  font-family: Oswald;
+  font-weight: 500;
+  letter-spacing: 2px;
 }
 
 .local-impacts-container{
@@ -127,24 +138,30 @@
 
 .faded3{
   padding-top: 2%;
-  letter-spacing: 3px;
-  color: var(--fourth-color);
-  font-family: Mulish;
+  color: var(--primary-color);
+
+  font-family: Source Sans Pro;
+  font-weight: 500;
+  letter-spacing: 1px;
 }
 
 .impact-title{
   font-size: 2.2rem;
   padding-top: 1%;
   margin: 0px;
-  font-family: Roboto Slab;
+
+  font-family: Oswald;
+  font-weight: 400;
+  letter-spacing: 2px;
 }
 
 .impact-text{
   font-size: 1.2rem;
   margin: 0px;
-  padding-top: 4%;
-  font-family: Mulish;
-  line-height: 30px;
+  padding-top: 2%;
+
+  font-family: Source Sans Pro;
+  font-weight: 400;
 }
 
 .impact-box a{
@@ -155,9 +172,10 @@
   text-align: center;
   font-size: 1.2rem;
   text-decoration: none;
-  color: var(--tertiary-color);
+  color: var(--secondary-color);
   border-radius: 22px;
-  font-family: Mulish;
+  font-family: Source Sans Pro;
+  font-weight: 500;
   transition: all 0.5s ease-in-out;
 }
 
@@ -258,18 +276,27 @@
 
 /*---------------------------- LARGE PART 4 FACT DISPLAY ----------------------------*/
 
+
 .part4{
   background-color: var(--tertiary-color);
   height: 300vh;
 
   display: flex;
   flex-direction: column;
+
+  position: relative;
 }
 
 .sponsor-title{
-  padding-top: 5%;
+  padding-top: 10%;
   text-align: center;
   color: white;
+
+  font-family: Oswald;
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+  z-index: 2;
 }
 
 .fact-holder{
@@ -278,8 +305,8 @@
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  margin-top: 5%;
-
+  margin-top: 10%;
+  z-index: 2;
 }
 
 .fact-container{
@@ -290,6 +317,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  z-index: 2;
 }
 
 .fact{
@@ -299,6 +327,7 @@
   align-items: center;
   opacity: 1;
   width: 25%;
+  z-index: 2;
 }
 
 .fact img{
@@ -317,7 +346,7 @@
 .fact h1{
   padding-top: 5%;
   font-family: Source Sans Pro;
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-align: center;
   color: white;
 }
@@ -327,6 +356,8 @@
   font-family: Source Sans Pro;
   text-align: center;
   color: white;
+
+  font-size: 1.2rem;
 }
 
 @media (max-width: 768px){
@@ -335,12 +366,22 @@
     margin-left: 0%;
   }
 
-  .part4{
-    height: 500vh;
-  }
-
   .fact img{
     width: 30%;
+  }
+
+  .fact h1{
+    font-size: 2rem;
+  }
+  
+  .fact p{
+  
+    font-size: 1rem;
+  }
+
+  .sponsor-title{
+    font-size: 1.2rem;
+    width: 95%;
   }
 
 }
@@ -505,7 +546,7 @@
 
   .part4{
     display: flex;
-    height: 100vh;
+    height: 2080px;
   }
 
   .bg-text{
@@ -515,8 +556,9 @@
 
   .part4-2{
     display: flex;
-    height: 80vh;
-    margin-top: 50%;
+    height: 900px;
+    margin-top: 55%;
+    
   }
 }
 
@@ -555,25 +597,44 @@
 @media (max-width:1068px){
   .part1{
     flex-direction: column;
-    height: 150vh;
+    height: 1020px;
     justify-content: center;
+    align-items: center;
   }
 
   .textbox-hero{
-    width: 95%;
+    width: 96%;
+    margin-left: 5%;
+    margin-top: 15%;
+  }
+
+  .textbox-hero h1{
+    font-size: 3rem;
+  }
+
+  .textbox-hero p{
+    font-size: 1rem;
+    margin-bottom: 10%;
   }
 
   .hero-img{
     width: 100%;
+    height: 60%;
   }
   
   .hero-img img{
-    height: 800px;
+    height: 100%;
+    width: 95%;
   }
+
+  .textbox-hero a{
+    font-size: 1rem;
+  }
+  
 
   .button-fame{
     width: 100%;
-    height: 20vh;
+    height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
