@@ -221,6 +221,18 @@
   object-fit: cover;
 }
 
+.position2{
+  object-position: 0px -130px;
+}
+
+.position3{
+  object-position: 0px -100px;
+}
+
+.position6{
+  object-position: -50px -130px;
+}
+
 /*------------------------------------ JOIN TSA ---------------------------------*/
 
 
