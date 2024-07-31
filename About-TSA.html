@@ -50,6 +50,9 @@
     <div class="part3-holder" id="chapter">
       <div class="hexagon-member">
         <img class="position" src="pictures/Cesar.webp">
+        <audio controls class="audio-file">
+          <source src="pictures/Cesar.m4a">
+        </audio>
         <div class="hexagon-text">
           <h2>Cesar Alanis</h2>
           <h3>President</h3>
@@ -59,6 +62,9 @@
 
       <div class="hexagon-member hexagon2">
         <img class="position2" src="pictures/Dave.webp">
+        <audio controls class="audio-file">
+          <source src="pictures/Dave.m4a">
+        </audio>
         <div class="hexagon-text">
           <h2>Dave Thadani</h2>
           <h3>Vice President</h3>
@@ -68,6 +74,9 @@
 
       <div class="hexagon-member">
         <img class="position3" src="pictures/josh.webp">
+        <audio controls class="audio-file">
+          <source src="pictures/Josh.m4a">
+        </audio>
         <div class="hexagon-text">
           <h2>Joshua Thomas</h2>
           <h3>Treasurer</h3>
@@ -78,7 +87,10 @@
 
     <div class="part3-holder">
       <div class="hexagon-member hexagon2">
-        <img class="position4" src="pictures/xandre.webp">
+        <img class="position4" src="pictures/xandre2.webp">
+        <audio controls class="audio-file">
+          <source src="pictures/Xandre.m4a">
+        </audio>
         <div class="hexagon-text">
           <h2>Xandre Graca</h2>
           <h3>Secretary</h3>
@@ -88,6 +100,9 @@
 
       <div class="hexagon-member">
         <img class="position5" src="pictures/ajay.webp">
+        <audio controls class="audio-file">
+          <source src="pictures/Ajay.m4a">
+        </audio>
         <div class="hexagon-text">
           <h2>Ajay Patel</h2>
           <h3>Reporter</h3>
@@ -96,7 +111,10 @@
       </div>
 
       <div class="hexagon-member hexagon2">
-        <img class="position6" src="pictures/Ray.webp">
+        <img class="position6" src="pictures/ray2.webp">
+        <audio controls class="audio-file">
+          <source src="pictures/Ray_2.m4a">
+        </audio>
         <div class="hexagon-text">
           <h2>Ray</h2>
           <h3>Sergeant of Arms</h3>
@@ -156,9 +174,21 @@
   </div>
 
   <div class="button-fame">
-    <a href="fame.html">VIST THE HALL OF FAME</a>
+    <a href="Our-gallery.html">Visit our Gallery</a>
   </div>
   
   <script src="js/main.js"></script>
+
+  <script>
+    let play = document.getElementById("play");
+    var count = 0
+      function playMusic(){
+        let audio = new Audio("pictures/Cesar.m4a");
+          audio.play();
+      }
+
+      play.addEventListener("click", playMusic);
+    
+  </script>
 </body>
 </html>
