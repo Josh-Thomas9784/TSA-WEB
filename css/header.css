@@ -78,12 +78,13 @@ header ul .li1 a{
 header ul .li2 a{
   background-color: var(--fourth-color);
   padding: 10px 25px;
-  border-radius: 22px
+  border-radius: 22px;
+  transition: all 0.3s ease-in-out;
 }
 
 header ul .li2 a:hover{
   color: #fffef8;;
-  background-color: var(--fifth-color);
+  background-color: var(--primary-color);
 }
 
 

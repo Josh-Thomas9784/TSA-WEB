@@ -1,3 +1,25 @@
+
+
+/*-------------------------------------------------------- animations ----------------------------------------*/
+@keyframes jiggle {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+
 .part1{
   height: 90vh;
   width: 100%;
@@ -184,7 +206,7 @@
 }
 
 .img-bkg{
-  background-image: url("../pictures/C17E527F-97C7-42D1-B689-A533B2164910.webp");
+  background-image: url("../pictures/IMG_1972.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -199,7 +221,7 @@
 }
 
 .img-bkg2{
-  background-image: url("../pictures/20230412_132627.jpg");
+  background-image: url("../pictures/IMG_2002.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -328,6 +350,10 @@
   opacity: 1;
   width: 25%;
   z-index: 2;
+
+  animation: jiggle linear;
+  animation-timeline: view();
+  animation-range: entry 0 cover 80%;
 }
 
 .fact img{
@@ -603,7 +629,7 @@
   }
 
   .textbox-hero{
-    width: 96%;
+    width: 90%;
     margin-left: 5%;
     margin-top: 15%;
   }
@@ -643,3 +669,5 @@
 
   
 }
+
+
