@@ -1,0 +1,27 @@
+/* -------------- IMPORTED FONTS ------------------*/
+@import url(https://fonts.googleapis.com/css?family=Oswald:300,400,700);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
+
+
+/* -------------- ROOT COLORS (USED THROUGHOUT WEBSITE) ------------------*/
+:root {
+  --primary-color: #005b9e; /* TSA BLUE */
+  --secondary-color: #F2F3F4; /* OFF WHITE */
+  --tertiary-color: #00294c; /* DARK BLAKISH BLUE */
+  --fourth-color: #D22330; /* TSA RED */
+
+
+  --brightness: brightness(100%);
+  --background: rgba(0, 0, 0, 0.050);
+  --transparent: transparent;
+  --dark: rgba(0, 0, 0, 0.493);
+}
+
+
+/* -------------- GENERAL MARKUP (ALL PAGES ARE AFFECTED) ------------------*/
+body{
+  background-color: var(--secondary-color);
+}
+
+/*---------------------------------- ANIMATIONS ----------------------------*/
+

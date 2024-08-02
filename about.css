@@ -1,0 +1,439 @@
+
+.part1{
+  width: 100%;
+  height: 50vh;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  position: relative;
+
+  /*background-image: url("../pictures/Screenshot\ 2024-06-09\ 213412.png");
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;*/
+
+}
+
+.part1 h1{
+  font-family: Oswald;
+  font-size: 5rem;
+  letter-spacing: 3px;
+
+  margin-top: 5%;
+  margin-left: 9.5%;
+}
+
+.part1 h2{
+  font-family: Source Sans Pro;
+  font-size: 2rem;
+  letter-spacing: 3px;
+  margin-left: 9.5%;
+}
+
+
+.part1-image{
+  position: absolute;
+  height: 1000px;
+  right: 0;
+  z-index: -1;
+}
+
+/*------------------------------------ MEET THE ADVISORS ---------------------------------*/
+
+.part2{ 
+  display: flex;
+  width: 100%;
+
+  margin-top: 5%;
+  height: 55vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.part2-container{
+  display: flex;
+  width: 80%;
+  gap: 10%;
+}
+
+.advisor1{
+  width: 50%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10%;
+
+  position: relative;
+}
+
+.advisor2{
+  width: 50%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10%;
+
+  position: relative;
+
+}
+
+.part2-holder{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background-color: var(--secondary-color);
+  border: 1px solid rgba(0, 0, 0, 0.068);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 20px;
+  padding: 5%;
+
+  position: absolute;
+  width: 90%;
+  bottom: -150px;
+  left: -50px;
+}
+
+.part2-holder h1{
+  font-family: Source Sans Pro;
+  font-weight:  500;
+  margin-bottom: 5px;
+}
+
+.part2-holder p{
+  width: 90%;
+  word-break: break-all;
+}
+
+.img-holder{
+  height: 100%;
+  width: 80%;
+  margin-left: 10%;
+
+  border-radius: 16px;
+}
+
+.img-holder img{
+  height: 100%;
+  width: 100%;
+  border-radius: 16px;
+}
+
+/*------------------------------------ MEET THE CHAPTER ---------------------------------*/
+
+.part3{
+  width: 100%;
+  height: 155vh;
+
+  text-align: center;
+
+  justify-content: center;
+  align-items: center;
+
+}
+
+.part3 h1{
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-family: Oswald;
+  letter-spacing: 3px;
+}
+
+.part3-holder{
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.hexagon-member{
+  display: flex;
+  margin: 10px 45px;
+
+  height: 700px;
+  width: 450px;
+
+  justify-content: center;
+  align-items: flex-end;
+
+  position: relative;
+}
+
+.hexagon-member:nth-child(1){
+  background-color: var(--primary-color);
+}
+
+.hexagon-member:nth-child(2){
+  background-color: var(--fourth-color);
+}
+
+.hexagon-member:nth-child(3){
+  background-color: var(--tertiary-color);
+}
+
+.hexagon-text{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  
+  align-items: flex-start;
+  padding-top: 2%;
+  padding-bottom: 5%;
+
+  background-color: var(--secondary-color);
+  height: 32%;
+
+  position: absolute;
+}
+
+.hexagon-text h2{
+  color: rgb(0, 0, 0);
+  font-family: Source Sans Pro;
+  font-weight: 600;
+}
+
+.hexagon-text h3{
+  color: rgb(0, 0, 0);
+  font-family: Source Sans Pro;
+  font-weight: 300;
+  margin-top: 5px;
+  margin-bottom: 4px;
+}
+
+.hexagon-text p{
+  color: rgb(0, 0, 0);
+  width: 100%;
+  align-content: flex-start;
+  text-align: left;
+  margin-top: 2%;
+  font-family: Source Sans Pro
+}
+
+.hexagon-member img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.music-button{
+  position: absolute;
+  z-index: 30;
+  right: 10px;
+  bottom: 230px;
+  border: none;
+  background-color: transparent;
+  transition: all 0.3s ease-out;
+}
+
+.music-button:hover{
+  cursor: pointer;
+  transform: scale(1.1, 1.1);
+  
+}
+
+.audio-file{
+  position: absolute;
+  z-index: 30;
+  bottom: 35%;
+  right: 5%;
+  height: 30px;
+  border: 1px solid var(--secondary-color);
+  border-radius: 200px;
+  width: 25%;
+  background-color: var(--secondary-color);
+}
+
+.position2{
+  object-position: 0px 0px;
+}
+
+.position3{
+  object-position: 0px -100px;
+}
+
+.position4{
+  object-position: 0px -100px;
+}
+
+.position6{
+  object-position: 0px -40px;
+}
+
+/*------------------------------------ JOIN TSA ---------------------------------*/
+
+
+.part4{
+  height: 55vh;
+  padding-top: 3%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10%;
+
+  background-color: rgb(236, 236, 236);
+}
+
+.part4-2{
+  width: 40%;
+}
+
+.part4-2 h1{
+  margin-bottom: 3%;
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-family: Oswald;
+  letter-spacing: 2px;
+}
+
+.part4-2 p{
+  line-height: 30px;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+/*------------------------------------ BUTTON =---------------------------------*/
+
+.button-fame{
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-fame a{
+  padding: 20px 35px;
+  border-radius: 20px;
+  text-decoration: none;
+
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-family: Oswald;
+  letter-spacing: 3px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+
+  transition: all 0.2s ease-in-out;
+}
+
+.button-fame a:hover{
+  padding: 25px 45px;
+  background-color: var(--fourth-color);
+}
+
+/*------------------------------------ RESPONSIVE =---------------------------------*/
+
+@media (max-width: 768px){
+
+  .part1 h1{
+    font-family: Oswald;
+    font-size: 4rem;
+    letter-spacing: 3px;
+  
+    margin-top: 5%;
+    margin-left: 0%;
+  }
+  
+  .part1 h2{
+    font-family: Source Sans Pro;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    margin-left: 0%;
+    text-align: center;
+    width: 95%;
+    
+  }
+
+  .part1{
+    align-items: center;
+  }
+
+
+
+
+
+  .part3-holder{
+    flex-direction: column;
+  }
+
+  .hexagon-member{
+    height: 550px;
+    width: 350px;
+    margin-top: 20%;
+  }
+
+  .part3{
+    width: 100%;
+    height: 4000px
+  }
+
+
+
+
+  .part2{ 
+    height: 1500px;
+    margin-top: 0%;
+  }
+
+  .part2-container{
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .advisor1{
+    width: 100%;
+    height: 45%;
+    align-items: center;
+    margin-bottom: 45%;
+  }
+  
+  .advisor2{
+    width: 100%;
+    height: 45%;
+    align-items: center;
+  }
+
+  .img-holder{
+    height: 80%;
+    width: 90%;
+    margin-left: 0;
+  }
+  
+  .img-holder img{
+    height: 100%;
+    width: 100%;
+    border-radius: 16px;
+    object-fit: cover;
+  }
+
+  .part2-holder{
+    position: absolute;
+    width: 95%;
+    bottom: -150px;
+    left: 10px;
+    right: 10px;
+  }
+
+
+
+  .part4{
+    height: 150vh;
+    padding-top: 3%;
+    padding: 5%;
+    flex-direction: column;
+  }
+  
+  .part4-2{
+    width: 100%;
+  }
+  
+  .part4-2 p{
+    line-height: 30px;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+  }
+  
+}
