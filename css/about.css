@@ -221,22 +221,6 @@
   object-fit: cover;
 }
 
-.music-button{
-  position: absolute;
-  z-index: 30;
-  right: 10px;
-  bottom: 230px;
-  border: none;
-  background-color: transparent;
-  transition: all 0.3s ease-out;
-}
-
-.music-button:hover{
-  cursor: pointer;
-  transform: scale(1.1, 1.1);
-  
-}
-
 .audio-file{
   position: absolute;
   z-index: 30;
@@ -254,7 +238,7 @@
 }
 
 .position3{
-  object-position: 0px -100px;
+  object-position: 0px -175px;
 }
 
 .position4{
@@ -423,7 +407,7 @@
 
 
   .part4{
-    height: 150vh;
+    height: 1600px;
     padding-top: 3%;
     padding: 5%;
     flex-direction: column;

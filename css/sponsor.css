@@ -521,13 +521,13 @@
 
 .textbox h1{
   font-size: clamp(2rem, 8vw, 3.55rem);
-  font-family: Roboto Slab;
+  font-family: Oswald;
   font-weight: 400;
 }
 
 .textbox p{
   font-size: clamp(.8rem, 5vw, 1.2rem);
-  font-family: Mulish;
+  font-family: Source Sans Pro;
 }
 
 .textbox a{
@@ -543,7 +543,7 @@
   transition: all 0.5s ease-in-out;
   cursor: pointer;
   font-size: 1.2rem;
-  font-family: Mulish;
+  font-family: Source Sans Pro;
 }
 
 .textbox a:hover{
