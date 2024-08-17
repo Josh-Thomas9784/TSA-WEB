@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <title>Lamar Consolidated Technology Student Association</title>
+  <link rel="icon" type="image/x-icon" href="/pictures/minimal_logo_tsa.webp">
+
+  <style>
+    body{
+      background-image: url('./pictures/Blue\ Modern\ Business\ Zoom\ Virtual\ Background\ \(1\).png');
+      background-size: cover;
+    }
+
+    .divvy{
+      padding-top: 20%;
+      width: 50%;
+      margin-left: 10%;
+
+      h1{
+        color: white;
+        font-family: Oswald;
+        letter-spacing: 1px;
+        font-size: 3rem;
+        margin-bottom: 10px;
+      }
+
+      h2{
+        color: white;
+        font-family: Source Sans Pro;
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 30px;
+
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header id="header">
+    <div class="img-logo">
+      <a href="index.html" class="logo"><img src="pictures/minimal_logo_tsa.webp"></a>
+    </div>
+    <div class="menuToggle"></div>
+    <nav>
+      <ul class="ul1">
+        <li class="li1"><a href="About-TSA.html">About TSA</a>
+          <ul>
+            <li><a href="About-TSA.html#chapter">Our Chapter</a></li>
+            <li class="li1"><a href="About-TSA.html#contacts">Contacts</a></li>
+            <li class="li1"><a href="Our-gallery.html">Our Gallery</a></li>
+          </ul>
+        </li>
+        <li class="li1"><a href="sponsor.html">Sponsor Us</a></li>
+        <li class="li1"><a href="store2.html">Store</a></li>
+        <li class="li2"><a href="login.html">Members</a></li>
+      </ul>
+    </nav>
+  </header>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script>
+    let menuToggle = document.querySelector('.menuToggle');
+    let header = document.querySelector('header');
+    menuToggle.onclick = function(){
+      header.classList.toggle('active');
+    }
+  </script>
+
+
+  <div class="divvy">
+    <h1>
+      404 Page Not Found
+    </h1>
+    <h2>
+      We apologize, but this page is currently unavailable. The TSA team is actively working to create and finalize this content for you as soon as possible. 
+      We understand the inconvenience and appreciate your patience and understanding during this process. Thank you for bearing with us as we strive to deliver
+       the best possible experience.
+    </h2>
+  </div>
+  
+</body>
+</html>
